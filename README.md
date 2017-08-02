@@ -1,4 +1,4 @@
-# Offline Event Logger
+# EventLogger
 
 Cross platform Event Logger for NodeJS written in pure Javascript.
 
@@ -13,7 +13,7 @@ The Windows Event Logging portion is heavily inspired from [`node-windows`](http
 ## How to use
 
 ```js
-const EventLogger = require('offline-event-logger')
+const EventLogger = require('eventlogger')
 
 const log = new EventLogger('Hello World')
 

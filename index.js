@@ -1,5 +1,5 @@
-var os = require('os')
-var platform = os.platform()
+const os = require('os')
+const platform = os.platform()
 
 switch (platform) {
   case 'win32':
