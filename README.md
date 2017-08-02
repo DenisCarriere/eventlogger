@@ -2,7 +2,7 @@
 
 Cross platform Event Logger for NodeJS written in pure Javascript.
 
-The Windows Event Logging portion is primarily from [`node-windows`](https://github.com/coreybutler/node-windows).
+The Windows Event Logging portion is heavily inspired from [`node-windows`](https://github.com/coreybutler/node-windows).
 
 ## Operating Systems
 
@@ -13,11 +13,11 @@ The Windows Event Logging portion is primarily from [`node-windows`](https://git
 ## How to use
 
 ```js
-var EventLogger = require('offline-event-logger');
+const EventLogger = require('offline-event-logger')
 
-var log = new EventLogger('Hello World');
+const log = new EventLogger('Hello World')
 
-log.info('Basic information.');
-log.warn('Watch out!');
-log.error('Something went wrong.');
+log.info('Basic information.')
+log.warn('Watch out!')
+log.error('Something went wrong.')
 ```

@@ -73,7 +73,7 @@ var write = function (log, src, type, msg, id, callback) {
 }
 
 // Basic functionality
-var logger = function (config) {
+var EventLogger = function (config) {
   config = config || {}
 
   if (typeof config === 'string') {
@@ -229,4 +229,4 @@ var logger = function (config) {
   })
 }
 
-module.exports = logger
+module.exports = EventLogger
