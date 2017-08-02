@@ -1,0 +1,20 @@
+{
+  "name": "offline-event-logger",
+  "version": "0.1.0",
+  "description": "Cross platform Event Logger for NodeJS written in pure Javascript.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenisCarriere/offline-event-logger.git"
+  },
+  "author": "Denis Carriere <@DenisCarriere>",
+  "license": "MIT",
+  "devDependencies": {
+    "standard": "^10.0.2",
+    "tape": "^4.8.0"
+  }
+}
