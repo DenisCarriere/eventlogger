@@ -32,9 +32,15 @@ log.error('Something went wrong.')
 
 ## MacOSX
 
-Using the `Console` users can capture/view application logs.
+MacOSX uses the `Console` to capture application information/warning/errors.
 
 ![darwin-console](images/darwin-console.png)
+
+## Windows
+
+Windows uses the `EventViewer` to capture application information/warning/errors.
+
+![darwin-console](images/win32-event-viewer.png)
 
 ## API
 
