@@ -5,9 +5,7 @@ var test = require('tape')
 var EventLogger = require('./')
 
 test('EventLogger -- all operating systems', t => {
-  var log = new EventLogger({
-    logPath: '/tmp/log'
-  })
+  var log = new EventLogger()
   t.equal(log.source, 'NodeJS', 'source')
   t.equal(log.eventLog, 'APPLICATION', 'eventLog')
   t.equal(log.toString(), 'EventLogger("NodeJS")')
