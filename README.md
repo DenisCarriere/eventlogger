@@ -14,8 +14,8 @@ The Windows Event Logging portion is heavily inspired from [`node-windows`](http
 
 ## Operating Systems
 
--   [ ] **Windows** => `Windows Event Viewer`
--   [x] **MacOSX** => `/Library/Logs/<SOURCE>/<SOURCE>.log`
+-   [x] **Windows** => `Windows Event Viewer`
+-   [x] **MacOSX** => `Console` => `/Library/Logs/<SOURCE>/<SOURCE>.log`
 -   [x] **Linux** => `/var/log/<SOURCE>.log`
 
 ## How to use
@@ -40,7 +40,7 @@ MacOSX uses the `Console` to capture application information/warning/errors.
 
 Windows uses the `EventViewer` to capture application information/warning/errors.
 
-![darwin-console](images/win32-event-viewer.png)
+![win32-event-viewer](images/win32-event-viewer.png)
 
 ## API
 
