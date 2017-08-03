@@ -14,12 +14,9 @@ The Windows Event Logging portion is heavily inspired from [`node-windows`](http
 
 ## Operating Systems
 
--   [ ] Windows
-> Windows Event Viewer
--   [x] MacOSX
-> `/Library/Logs/<SOURCE>/<SOURCE>.log`
--   [x] Linux
-> `/var/log/<SOURCE>.log`
+-   [ ] **Windows** => `Windows Event Viewer`
+-   [x] **MacOSX** => `/Library/Logs/<SOURCE>/<SOURCE>.log`
+-   [x] **Linux** => `/var/log/<SOURCE>.log`
 
 ## How to use
 
@@ -50,9 +47,9 @@ EventLogger Constructor
 **Parameters**
 
 -   `config` **([Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) \| [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String))** Configuration (optional, default `{}`)
-    -   `config.source` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Source (optional, default `'Node.js'`)
+    -   `config.source` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Source (optional, default `'NodeJS'`)
     -   `config.eventLog` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Event Log (optional, default `'APPLICATION'`)
-    -   `config.logPath` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Log Path (optional, default `'~/Library/Logs/Node.js'`)
+    -   `config.logPath` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Log Path (optional, default `'~/Library/Logs/NodeJS'`)
 
 #### write
 
@@ -64,12 +61,6 @@ Write
 -   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Message
 -   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
-
-**Examples**
-
-```javascript
-//= 2016-03-15T23:25:23Z [6419] INFO file-descriptors (nofiles) new hard limit is -1, new soft limit is 1024
-```
 
 #### warn
 
