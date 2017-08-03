@@ -25,7 +25,8 @@
     "documentation": "^5.1.0",
     "fs-extra": "^4.0.1",
     "standard": "^10.0.2",
-    "tap": "^10.7.1"
+    "tap": "^10.7.1",
+    "tape": "^4.8.0"
   },
   "dependencies": {}
 }

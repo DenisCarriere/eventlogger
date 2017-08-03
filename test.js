@@ -1,7 +1,7 @@
 var fs = require('fs-extra')
 var os = require('os')
 var path = require('path')
-var {test} = require('tap')
+var test = require('tape')
 var EventLogger = require('./')
 
 test('EventLogger -- all operating systems', t => {
