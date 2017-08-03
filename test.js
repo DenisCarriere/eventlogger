@@ -1,20 +1,29 @@
 var fs = require('fs-extra')
 var os = require('os')
 var path = require('path')
-var test = require('tape')
+var {test} = require('tap')
 var EventLogger = require('./')
+
+test('EventLogger -- all operating systems', t => {
+  var log = new EventLogger()
+  t.equal(log.source, 'NodeJS', 'source')
+  t.equal(log.eventLog, 'APPLICATION', 'eventLog')
+  t.equal(log.toString(), 'EventLogger("NodeJS")')
+  t.end()
+})
+
+test('EventLogger -- wrong types', t => {
+  var log = new EventLogger({
+    eventLog: 'UNKNOWN'
+  })
+  t.equal(log.eventLog, 'APPLICATION', 'eventLog')
+  log.write('UNKNOWN', 'normal message', 'string code')
+  log.write('', 'normal message')
+  t.end()
+})
 
 switch (os.platform()) {
   case 'darwin':
-    test('darwin -- default values', t => {
-      var logPath = path.join(os.homedir(), 'Library', 'Logs', 'NodeJS')
-      var log = new EventLogger()
-      t.equal(log.source, 'NodeJS', 'source')
-      t.equal(log.eventLog, 'APPLICATION', 'eventLog')
-      t.equal(log.logPath, logPath, 'logPath')
-      t.end()
-    })
-
     test('darwin -- custom values', t => {
       var logPath = '~/Library/Logs/Foo'
       var log = new EventLogger({
@@ -35,23 +44,19 @@ switch (os.platform()) {
       fs.removeSync(logPath)
       var log = new EventLogger(source)
 
-      log.warn('Basic information.')
-      log.info('Watch out!')
+      log.info('Basic information')
+      log.information('Basic information')
+      log.warning('Watch out!')
+      log.warn('Watch out!')
       log.error('Something went wrong.')
+      log.auditFailure('Audit Failure')
+      log.auditSuccess('Audit Success')
 
-      t.equal(fs.readFileSync(logFilePath).byteLength, 173, 'saved log')
+      t.equal(fs.readFileSync(logFilePath).byteLength, 403, 'saved log')
       t.end()
     })
     break
   case 'linux':
-    test('linux -- default values', t => {
-      var logPath = '/var/log'
-      var log = new EventLogger()
-      t.equal(log.source, 'NodeJS', 'source')
-      t.equal(log.eventLog, 'APPLICATION', 'eventLog')
-      t.equal(log.logPath, logPath, 'logPath')
-      t.end()
-    })
     test('linux -- custom values', t => {
       var logPath = '/var/local/log'
       var log = new EventLogger({
@@ -75,21 +80,19 @@ switch (os.platform()) {
         logPath: logPath
       })
 
-      log.warn('Basic information.')
-      log.info('Watch out!')
+      log.info('Basic information')
+      log.information('Basic information')
+      log.warning('Watch out!')
+      log.warn('Watch out!')
       log.error('Something went wrong.')
+      log.auditFailure('Audit Failure')
+      log.auditSuccess('Audit Success')
 
-      t.equal(fs.readFileSync(logFilePath).byteLength, 173, 'saved log')
+      t.equal(fs.readFileSync(logFilePath).byteLength, 403, 'saved log')
       t.end()
     })
     break
   case 'win32':
-    test('win32 -- default values', t => {
-      var log = new EventLogger()
-      t.equal(log.source, 'NodeJS', 'source')
-      t.equal(log.eventLog, 'APPLICATION', 'eventLog')
-      t.end()
-    })
     test('win32 -- custom values', t => {
       var log = new EventLogger({
         source: 'Hello World',
@@ -103,9 +106,14 @@ switch (os.platform()) {
       var source = 'Hello World'
       var log = new EventLogger(source)
 
-      log.warn('Basic information.')
-      log.info('Watch out!')
+      log.info('Basic information')
+      log.information('Basic information')
+      log.warning('Watch out!')
+      log.warn('Watch out!')
       log.error('Something went wrong.')
+      log.auditFailure('Audit Failure')
+      log.auditSuccess('Audit Success')
+
       t.pass()
       t.end()
     })

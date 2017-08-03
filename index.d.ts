@@ -3,8 +3,8 @@ type EventTypes = 'APPLICATION' | 'SYSTEM'
 
 interface Config {
   source?: string
-  eventLogs?: EventTypes
-  path?: string
+  eventLog?: EventTypes
+  logPath?: string
 }
 type Callback = (error: Error) => void
 
@@ -17,7 +17,7 @@ declare class EventLogger {
   information (message: string, code?: number, callback?: Callback): void
   auditSuccess (message: string, code?: number, callback?: Callback): void
   auditFailure (message: string, code?: number, callback?: Callback): void
-  write (messageType: MessageTypes, message: string, code?: number, callback?: Callback): void
+  toString(): string
 }
 
 declare namespace EventLogger {}

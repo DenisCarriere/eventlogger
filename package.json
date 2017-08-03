@@ -1,10 +1,17 @@
 {
   "name": "eventlogger",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "description": "Cross-platform Event Logger for NodeJS written in pure Javascript.",
   "main": "index.js",
   "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "bin",
+    "lib"
+  ],
   "scripts": {
+    "pretest": "standard",
     "test": "tap test.js",
     "docs": "documentation readme lib/darwin.js --section=API"
   },
@@ -16,12 +23,9 @@
   "license": "MIT",
   "devDependencies": {
     "documentation": "^5.1.0",
-    "standard": "^10.0.2",
-    "tap": "^10.7.1",
-    "tape": "^4.8.0"
-  },
-  "dependencies": {
     "fs-extra": "^4.0.1",
-    "mkdirp": "^0.5.1"
-  }
+    "standard": "^10.0.2",
+    "tap": "^10.7.1"
+  },
+  "dependencies": {}
 }
