@@ -4,7 +4,6 @@
 
 - 100% code coverage
 - Only 0 dependencies
-- Switched `yarn.lock` for `package-lock.json`
 - Add Types testing
 
 ## 0.2.0 - 2017-08-02
