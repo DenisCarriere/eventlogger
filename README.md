@@ -22,7 +22,6 @@ The Windows Event Logging portion is heavily inspired from [`node-windows`](http
 
 ```js
 const EventLogger = require('eventlogger')
-
 const log = new EventLogger('Hello World')
 
 log.info('Basic information.')
@@ -41,6 +40,12 @@ MacOSX uses the `Console` to capture application information/warning/errors.
 Windows uses the `EventViewer` to capture application information/warning/errors.
 
 ![win32-event-viewer](images/win32-event-viewer.png)
+
+## Linux
+
+Linux stores logs via text files to capture application information/warning/errors.
+
+![linux-logging](images/linux-logging.png)
 
 ## API
 
