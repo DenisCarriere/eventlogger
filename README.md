@@ -62,17 +62,6 @@ EventLogger Constructor
     -   `config.eventLog` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Event Log (optional, default `'APPLICATION'`)
     -   `config.logPath` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Log Path (optional, default `'~/Library/Logs/NodeJS'`)
 
-#### write
-
-Write
-
-**Parameters**
-
--   `messageType` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Message Type
--   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Message
--   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
--   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
-
 #### warn
 
 Warning
