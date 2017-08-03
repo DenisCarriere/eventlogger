@@ -8,15 +8,15 @@
 
 [![Standard - JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
-Cross platform Event Logger for NodeJS written in pure ES5 Javascript.
+Cross platform Event Logger for NodeJS written in pure ES5 Javascript with zero dependencies.
 
-The Windows Event Logging portion is heavily inspired from [`node-windows`](https://github.com/coreybutler/node-windows).
+> The Windows Event Logging portion is heavily inspired from [`node-windows`](https://github.com/coreybutler/node-windows).
 
-## Operating Systems
+## Install
 
--   [x] **Windows** => `Windows Event Viewer`
--   [x] **MacOSX** => `Console` => `/Library/Logs/<SOURCE>/<SOURCE>.log`
--   [x] **Linux** => `/var/log/<SOURCE>.log`
+```bash
+$ npm install eventlogger
+```
 
 ## How to use
 
@@ -28,6 +28,20 @@ log.info('Basic information.')
 log.warn('Watch out!')
 log.error('Something went wrong.')
 ```
+
+## Operating Systems
+
+-   [x] **Windows** => [`Windows Event Viewer`](https://en.wikipedia.org/wiki/Event_Viewer)
+-   [x] **MacOSX** => [`Console`](https://developer.apple.com/documentation/os/logging) => `/Library/Logs/<SOURCE>/<SOURCE>.log`
+-   [x] **Linux** => `/var/log/<SOURCE>.log`
+
+## Event Types
+
+-   [x] `info` / `information`
+-   [x] `warn` / `warning`
+-   [x] `error`
+-   [x] `auditSuccess`
+-   [x] `auditFailure`
 
 ## MacOSX
 
@@ -62,6 +76,16 @@ EventLogger Constructor
     -   `config.eventLog` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Event Log (optional, default `'APPLICATION'`)
     -   `config.logPath` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Log Path (optional, default `'~/Library/Logs/NodeJS'`)
 
+**Examples**
+
+```javascript
+const EventLogger = require('eventlogger')
+const log = new EventLogger({
+  source: 'Hello World',
+  logPath: '~/Library/Logs'
+})
+```
+
 #### warn
 
 Warning
@@ -71,6 +95,13 @@ Warning
 -   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Message
 -   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
+
+**Examples**
+
+```javascript
+const log = new EventLogger()
+log.warn('Watch out!')
+```
 
 #### info
 
@@ -82,6 +113,13 @@ Information
 -   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
 
+**Examples**
+
+```javascript
+const log = new EventLogger()
+log.info('Basic Information')
+```
+
 #### error
 
 Error
@@ -91,6 +129,13 @@ Error
 -   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Message
 -   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
+
+**Examples**
+
+```javascript
+const log = new EventLogger()
+log.error('Something went wrong!')
+```
 
 #### auditSuccess
 
@@ -102,6 +147,13 @@ Audit Success
 -   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
 
+**Examples**
+
+```javascript
+const log = new EventLogger()
+log.auditSuccess('Build passed!')
+```
+
 #### auditFailure
 
 Audit Failure
@@ -111,3 +163,10 @@ Audit Failure
 -   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Message
 -   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
 -   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
+
+**Examples**
+
+```javascript
+const log = new EventLogger()
+log.auditFailure('Build failed :(')
+```
