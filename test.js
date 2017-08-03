@@ -66,7 +66,7 @@ switch (os.platform()) {
     })
     test('linux -- write', t => {
       var source = 'Hello World'
-      var logPath = '/var/log/'
+      var logPath = '/tmp/log/'
       var logFilePath = logPath + source + '.log'
       fs.removeSync(logFilePath)
 
