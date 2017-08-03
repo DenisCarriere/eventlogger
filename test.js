@@ -82,4 +82,31 @@ switch (os.platform()) {
       t.equal(fs.readFileSync(logFilePath).byteLength, 173, 'saved log')
       t.end()
     })
+    break
+  case 'win32':
+    test('win32 -- default values', t => {
+      var log = new EventLogger()
+      t.equal(log.source, 'NodeJS', 'source')
+      t.equal(log.eventLog, 'APPLICATION', 'eventLog')
+      t.end()
+    })
+    test('win32 -- custom values', t => {
+      var log = new EventLogger({
+        source: 'Hello World',
+        eventLog: 'SYSTEM'
+      })
+      t.equal(log.source, 'Hello World', 'source')
+      t.equal(log.eventLog, 'SYSTEM', 'eventLog')
+      t.end()
+    })
+    test('win32 -- write', t => {
+      var source = 'Hello World'
+      var log = new EventLogger(source)
+
+      log.warn('Basic information.')
+      log.info('Watch out!')
+      log.error('Something went wrong.')
+      t.pass()
+      t.end()
+    })
 }
