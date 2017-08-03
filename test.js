@@ -1,25 +1,24 @@
-const fs = require('fs-extra')
-const os = require('os')
-const path = require('path')
-const test = require('tape')
-const moment = require('moment')
-const EventLogger = require('./')
+var fs = require('fs-extra')
+var os = require('os')
+var path = require('path')
+var test = require('tape')
+var EventLogger = require('./')
 
 switch (os.platform()) {
   case 'darwin':
     test('darwin -- default values', t => {
-      const logPath = path.join(os.homedir(), 'Library', 'Logs', 'Node.js')
-      const log = new EventLogger()
-      t.equal(log.source, 'Node.js', 'source')
+      var logPath = path.join(os.homedir(), 'Library', 'Logs', 'NodeJS')
+      var log = new EventLogger()
+      t.equal(log.source, 'NodeJS', 'source')
       t.equal(log.eventLog, 'APPLICATION', 'eventLog')
       t.equal(log.logPath, logPath, 'logPath')
       t.end()
     })
 
     test('darwin -- custom values', t => {
-      const logPath = '~/Library/Logs/Foo'
-      const log = new EventLogger({
-        logPath,
+      var logPath = '~/Library/Logs/Foo'
+      var log = new EventLogger({
+        logPath: logPath,
         source: 'Hello World',
         eventLog: 'SYSTEM'
       })
@@ -30,12 +29,51 @@ switch (os.platform()) {
     })
 
     test('darwin -- write', t => {
-      const source = 'EventLogger'
-      const date = moment().format('YYYY-MM-DD')
-      const logPath = path.join(os.homedir(), 'Library', 'Logs', source)
-      const logFilePath = path.join(logPath, `${source}_${date}.log`)
+      var source = 'Hello World'
+      var logPath = path.join(os.homedir(), 'Library', 'Logs', source)
+      var logFilePath = path.join(logPath, source + '.log')
       fs.removeSync(logPath)
-      const log = new EventLogger(source)
+      var log = new EventLogger(source)
+
+      log.warn('Basic information.')
+      log.info('Watch out!')
+      log.error('Something went wrong.')
+
+      t.equal(fs.readFileSync(logFilePath).byteLength, 173, 'saved log')
+      t.end()
+    })
+    break
+  case 'linux':
+    test('linux -- default values', t => {
+      var logPath = '/var/log'
+      var log = new EventLogger()
+      t.equal(log.source, 'NodeJS', 'source')
+      t.equal(log.eventLog, 'APPLICATION', 'eventLog')
+      t.equal(log.logPath, logPath, 'logPath')
+      t.end()
+    })
+    test('linux -- custom values', t => {
+      var logPath = '/var/local/log'
+      var log = new EventLogger({
+        logPath: logPath,
+        source: 'Hello World',
+        eventLog: 'SYSTEM'
+      })
+      t.equal(log.source, 'Hello World', 'source')
+      t.equal(log.eventLog, 'SYSTEM', 'eventLog')
+      t.equal(log.logPath, logPath, 'logPath')
+      t.end()
+    })
+    test('linux -- write', t => {
+      var source = 'Hello World'
+      var logPath = '/var/log/'
+      var logFilePath = logPath + source + '.log'
+      fs.removeSync(logFilePath)
+
+      var log = new EventLogger({
+        source: source,
+        logPath: logPath
+      })
 
       log.warn('Basic information.')
       log.info('Watch out!')
