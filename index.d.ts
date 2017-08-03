@@ -6,15 +6,19 @@ interface Config {
   eventLogs?: EventTypes
   path?: string
 }
+type Callback = (error: Error) => void
 
 declare class EventLogger {
   constructor (config?: Config | string)
-  warn (message: string, code?: number, callback?: (error: Error) => void): void
-  error (message: string, code?: number, callback?: (error: Error) => void): void
-  info (message: string, code?: number, callback?: (error: Error) => void): void
-  auditSuccess (message: string, code?: number, callback?: (error: Error) => void): void
-  auditFailure (message: string, code?: number, callback?: (error: Error) => void): void
+  warn (message: string, code?: number, callback?: Callback): void
+  warning (message: string, code?: number, callback?: Callback): void
+  error (message: string, code?: number, callback?: Callback): void
+  info (message: string, code?: number, callback?: Callback): void
+  information (message: string, code?: number, callback?: Callback): void
+  auditSuccess (message: string, code?: number, callback?: Callback): void
+  auditFailure (message: string, code?: number, callback?: Callback): void
+  write (messageType: MessageTypes, message: string, code?: number, callback?: Callback): void
 }
 
-namespace EventLogger {}
+declare namespace EventLogger {}
 export = EventLogger

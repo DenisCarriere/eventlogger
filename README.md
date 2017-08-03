@@ -6,7 +6,7 @@ The Windows Event Logging portion is heavily inspired from [`node-windows`](http
 
 ## Operating Systems
 
-- [x] Windows
+- [ ] Windows
 - [x] MacOSX
 - [ ] Linux
 
@@ -21,3 +21,9 @@ log.info('Basic information.')
 log.warn('Watch out!')
 log.error('Something went wrong.')
 ```
+
+## MacOSX
+
+Using the `Console` users can capture/view application logs.
+
+![darwin-console](images/darwin-console.png)
