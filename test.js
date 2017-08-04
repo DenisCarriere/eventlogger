@@ -50,8 +50,7 @@ switch (os.platform()) {
       log.warning('Watch out!')
       log.warn('Watch out!')
       log.error('Something went wrong.')
-      log.auditFailure('Audit Failure')
-      log.auditSuccess('Audit Success')
+      log.success('Success!')
 
       t.equal(fs.readFileSync(logFilePath).byteLength, 403, 'saved log')
       t.end()
@@ -86,8 +85,7 @@ switch (os.platform()) {
       log.warning('Watch out!')
       log.warn('Watch out!')
       log.error('Something went wrong.')
-      log.auditFailure('Audit Failure')
-      log.auditSuccess('Audit Success')
+      log.success('Success!')
 
       t.equal(fs.readFileSync(logFilePath).byteLength, 403, 'saved log')
       t.end()
@@ -112,8 +110,7 @@ switch (os.platform()) {
       log.warning('Watch out!')
       log.warn('Watch out!')
       log.error('Something went wrong.')
-      log.auditFailure('Audit Failure')
-      log.auditSuccess('Audit Success')
+      log.success('Success!')
 
       t.pass()
       t.end()
