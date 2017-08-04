@@ -1,4 +1,4 @@
-type MessageTypes = 'ERROR'| 'WARNING'| 'INFORMATION'| 'SUCCESSAUDIT'| 'FAILUREAUDIT'
+type MessageTypes = 'ERROR'| 'WARNING'| 'INFORMATION'| 'SUCCESS'
 type EventTypes = 'APPLICATION' | 'SYSTEM'
 
 interface Config {
@@ -15,8 +15,7 @@ declare class EventLogger {
   error (message: string, code?: number, callback?: Callback): void
   info (message: string, code?: number, callback?: Callback): void
   information (message: string, code?: number, callback?: Callback): void
-  auditSuccess (message: string, code?: number, callback?: Callback): void
-  auditFailure (message: string, code?: number, callback?: Callback): void
+  success (message: string, code?: number, callback?: Callback): void
   toString(): string
 }
 

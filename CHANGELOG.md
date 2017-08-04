@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.0 - 2017-08-04
+
+- Deprecated `auditFailure` & `auditSuccess` in favor of `success`
+
 ## 1.0.0 - 2017-08-03
 
 - 100% code coverage
