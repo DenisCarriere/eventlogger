@@ -52,7 +52,7 @@ switch (os.platform()) {
       log.error('Something went wrong.')
       log.success('Success!')
 
-      t.equal(fs.readFileSync(logFilePath).byteLength, 403, 'saved log')
+      t.equal(fs.readFileSync(logFilePath).byteLength, 334, 'saved log')
       t.end()
     })
     break
@@ -87,7 +87,7 @@ switch (os.platform()) {
       log.error('Something went wrong.')
       log.success('Success!')
 
-      t.equal(fs.readFileSync(logFilePath).byteLength, 403, 'saved log')
+      t.equal(fs.readFileSync(logFilePath).byteLength, 334, 'saved log')
       t.end()
     })
     break

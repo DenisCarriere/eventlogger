@@ -2,6 +2,7 @@
 
 ## 1.1.0 - 2017-08-04
 
+- Fix win32 by replacing `exec` with `spawn`
 - Deprecated `auditFailure` & `auditSuccess` in favor of `success`
 
 ## 1.0.0 - 2017-08-03
