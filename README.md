@@ -1,6 +1,7 @@
 # EventLogger
 
 [![Build Status](https://travis-ci.org/DenisCarriere/eventlogger.svg?branch=master)](https://travis-ci.org/DenisCarriere/eventlogger)
+[![Build status](https://ci.appveyor.com/api/projects/status/v5dd6v226yl4q6wx?svg=true)](https://ci.appveyor.com/project/DenisCarriere/eventlogger)
 [![npm version](https://badge.fury.io/js/eventlogger.svg)](https://badge.fury.io/js/eventlogger)
 [![Coverage Status](https://coveralls.io/repos/github/DenisCarriere/eventlogger/badge.svg?branch=master)](https://coveralls.io/github/DenisCarriere/eventlogger?branch=master)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/DenisCarriere/eventlogger/master/LICENSE)
