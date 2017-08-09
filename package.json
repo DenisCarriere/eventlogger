@@ -1,13 +1,12 @@
 {
   "name": "eventlogger",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "Cross-platform Event Logger for NodeJS written in pure Javascript.",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
     "index.js",
     "index.d.ts",
-    "bin",
     "lib"
   ],
   "scripts": {

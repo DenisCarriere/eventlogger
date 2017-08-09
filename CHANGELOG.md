@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0 - 2017-08-09
+
+- Dropped binaries folder
+
 ## 1.1.0 - 2017-08-04
 
 - Fix win32 by replacing `exec` with `spawn`
