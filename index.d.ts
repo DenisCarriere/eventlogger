@@ -10,12 +10,12 @@ type Callback = (error: Error) => void
 
 declare class EventLogger {
   constructor (config?: Config | string)
-  warn (message: string, code?: number, callback?: Callback): void
-  warning (message: string, code?: number, callback?: Callback): void
-  error (message: string, code?: number, callback?: Callback): void
-  info (message: string, code?: number, callback?: Callback): void
-  information (message: string, code?: number, callback?: Callback): void
-  success (message: string, code?: number, callback?: Callback): void
+  warn (message: any, code?: number, callback?: Callback): void
+  warning (message: any, code?: number, callback?: Callback): void
+  error (message: any, code?: number, callback?: Callback): void
+  info (message: any, code?: number, callback?: Callback): void
+  information (message: any, code?: number, callback?: Callback): void
+  success (message: any, code?: number, callback?: Callback): void
   toString(): string
 }
 

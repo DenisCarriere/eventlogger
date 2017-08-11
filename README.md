@@ -138,24 +138,7 @@ const log = new EventLogger()
 log.error('Something went wrong!')
 ```
 
-#### auditSuccess
-
-Audit Success
-
-**Parameters**
-
--   `message` **[string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)** Message
--   `code` **[number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Code (optional, default `1000`)
--   `callback` **[Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function)?** Callback
-
-**Examples**
-
-```javascript
-const log = new EventLogger()
-log.auditSuccess('Build passed!')
-```
-
-#### auditFailure
+#### success
 
 Audit Failure
 
@@ -169,5 +152,5 @@ Audit Failure
 
 ```javascript
 const log = new EventLogger()
-log.auditFailure('Build failed :(')
+log.success('Tests pass!')
 ```

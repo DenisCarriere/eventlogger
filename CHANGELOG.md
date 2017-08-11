@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.3.0 - 2017-08-11
+
+- Handle JSON/Array/Number as message
+
 ## 1.2.0 - 2017-08-09
 
 - Dropped binaries folder
