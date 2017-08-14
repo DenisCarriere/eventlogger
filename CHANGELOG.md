@@ -2,6 +2,7 @@
 
 ## 1.3.0 - 2017-08-11
 
+- Remove `console.log` from Windows logger
 - Handle JSON/Array/Number as message
 
 ## 1.2.0 - 2017-08-09
