@@ -19,6 +19,7 @@ test('EventLogger -- wrong types', t => {
   })
   t.equal(log.eventLog, 'APPLICATION', 'eventLog')
   log.write('UNKNOWN', 'normal message', 'string code')
+  log.write({message: 'JSON'}, 'normal message', 'string code')
   log.write('', 'normal message')
   t.end()
 })
